@@ -38,7 +38,7 @@ jobs:
         container-registry-password: ${{ secrets.acr_myacr4568975_password }}
         secret-name: devopsclustedockerauth
        
-    - uses: azure/k8s-deploy@v1.2
+    - uses: azure/k8s-deploy@v3.1
       with:
         namespace: workflownamespace
         manifests: |
