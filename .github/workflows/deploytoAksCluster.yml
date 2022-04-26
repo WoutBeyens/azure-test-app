@@ -49,3 +49,4 @@ jobs:
           myacr4568975.azurecr.io/devopsclusteraks:${{ github.sha }}
         imagepullsecrets: |
           devopsclustedockerauth
+        force: true
