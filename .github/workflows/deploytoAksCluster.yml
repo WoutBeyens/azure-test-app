@@ -24,15 +24,15 @@ jobs:
     
     - name: Create namespace
       run: |
-        namespacePresent=`kubectl get namespace | grep workflownamespace | wc -l`
+        namespacePresent=`kubectl get namespace | grep workflownamespacetest | wc -l`
         if [ $namespacePresent -eq 0 ]
         then
-            echo `kubectl create namespace workflownamespace`
+            echo `kubectl create namespace workflownamespacetest`
         fi
 
     - uses: azure/k8s-create-secret@v1
       with:
-        namespace: workflownamespace
+        namespace: workflownamespacetest
         container-registry-url: myacr4568975.azurecr.io
         container-registry-username: ${{ secrets.acr_myacr4568975_username }}
         container-registry-password: ${{ secrets.acr_myacr4568975_password }}
@@ -40,7 +40,7 @@ jobs:
        
     - uses: azure/k8s-deploy@v3.1
       with:
-        namespace: workflownamespace
+        namespace: workflownamespacetest
         manifests: |
           manifests/deployment.yml
           manifests/service.yml
