@@ -27,7 +27,7 @@ jobs:
         namespacePresent=`kubectl get namespace | grep workflownamespace | wc -l`
         if [ $namespacePresent -eq 0 ]
         then
-            echo `kubectl create namespace devops-cluster-aksa4f8`
+            echo `kubectl create namespace workflownamespace`
         fi
 
     - uses: azure/k8s-create-secret@v1
