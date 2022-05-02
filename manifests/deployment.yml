@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: "devopsclusteraks-6a73"
-          image: "myacr4568975.azurecr.io/devopsclusteraks"
+          image: "hello-world"
           ports:
           - containerPort: 80
