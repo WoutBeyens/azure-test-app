@@ -14,7 +14,7 @@ jobs:
     - name: Build and push image to ACR
       id: build-image
       run: |
-        docker build "$GITHUB_WORKSPACE/azure-vote" -f  "azure-vote/Dockerfile" -t myacr4568975.azurecr.io/devopsclusteraks:${{ github.sha }} --label dockerfile-path=azure-vote/Dockerfile
+        docker build "$GITHUB_WORKSPACE/azure-vote" -f  "azure-vote/Dockerfile-for-app-service" -t myacr4568975.azurecr.io/devopsclusteraks:${{ github.sha }} --label dockerfile-path=azure-vote/Dockerfile
         docker push myacr4568975.azurecr.io/devopsclusteraks:${{ github.sha }}
     
     - uses: azure/k8s-set-context@v1
