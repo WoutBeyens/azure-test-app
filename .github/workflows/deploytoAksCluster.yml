@@ -40,7 +40,7 @@ jobs:
           manifests/service.yml
           manifests/ingress.yml
         images: |
-          myacr4568975.azurecr.io/devopsclusteraks:${{ github.sha }}
+          "hello-world"
         imagepullsecrets: |
           devopsclustedockerauth
         force: true
