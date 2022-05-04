@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "devopsclusteraks-0d28"
+    labels:
+        app: "devopsclusteraks-0d28"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: devops-cluster-aksae28-devopsclusteraks-0d28.f2fe1b1d7b3240c696a7.westeurope.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "devopsclusteraks-0d28"
+                servicePort: 80
